@@ -60,48 +60,161 @@ input {
   font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+}
+
+.search-form__label:not(label:has(input[type='text'])) {
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
+
+fieldset {
+  border: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .content {
   /* display: flex;
   align-items: flex-end; */
-  display:grid;
+  display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
   align-items: end;
 }
 
-/* Левый блок */
-.search-form {
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.search-form__submit-button {
-  background-color: transparent;
-  border: 1px solid #fff;
+.button {
   font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
   color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+
+/* Левый блок */
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+}
+
+.search-form__submit-button {
   width: 194px;
   height: 34px;
+  font-weight: 700;
 }
 
 .result__video-container {
   width: 100%;
   height: 386px;
   margin-bottom: 16px;
+  position: relative;
 }
+
 .result__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.search-form__fieldset {
+  width: fit-content;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-form__textfield {
+  color: #fff;
+  width: 225px;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  padding: 1px;
+  /* background-color: aqua; */
+  border: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked+.search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:hover:not(label:has(input[type='text'])) {
+  text-decoration: underline;
+}
+
+input[type='text']:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
 }
 
 
@@ -110,6 +223,7 @@ a {
   width: 399px;
   height: 298px;
   overflow: hidden scroll;
+  position: relative;
 }
 
 .search-form__fieldset-title {
@@ -117,28 +231,36 @@ a {
   font-size: 18px;
 }
 
-
-
 .title {
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   text-transform: uppercase;
   line-height: 94%;
+  margin-bottom: 26px;
 }
+
 .content__accent {
   color: #545050;
 }
+
 .content__list {
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin-bottom: 30px;
 }
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 .content__video-card {
   display: flex;
   justify-content: space-between;
 }
+
 .content__video-card-thumbnail {
   min-width: 194px;
   height: 103px;
@@ -149,6 +271,7 @@ a {
 .content__video-card-description-container {
   flex-grow: 1;
 }
+
 .content__video-card-title {
   font-size: 30px;
   line-height: 100%;
@@ -156,6 +279,8 @@ a {
   font-weight: 700;
   margin-bottom: 6px;
   white-space: nowrap;
+  /* overflow-x: visible;
+  overflow-y: hidden; */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -168,3 +293,35 @@ a {
   line-clamp: 3;
 }
 
+.more-button {
+  width: 100%;
+  height: 34px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 3px;
+}
+
+.content__card-link {
+  display: block;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
