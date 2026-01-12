@@ -222,7 +222,7 @@ input[type='text']:focus {
 .content__list-container {
   width: 399px;
   height: 298px;
-  overflow: hidden scroll;
+  overflow: auto;
   position: relative;
 }
 
@@ -277,12 +277,12 @@ input[type='text']:focus {
   line-height: 100%;
   font-family: Oswald, sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: 6px;
   white-space: nowrap;
-  /* overflow-x: visible;
-  overflow-y: hidden; */
   overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 192px;
 }
 
 .content__video-card-description {
@@ -291,15 +291,17 @@ input[type='text']:focus {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
+  max-width: 192px;
 }
 
 .more-button {
-  width: 100%;
+  width: 98%;
   height: 34px;
   font-weight: 700;
-  margin-bottom: 2px;
-  margin-left: 2px;
-  margin-right: 3px;
+  /* margin-right: 3px; */
+  /* margin: auto; */
+  margin-bottom: 4px;
+  margin-left: 4px;
 }
 
 .content__card-link {
