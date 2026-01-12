@@ -144,7 +144,8 @@ fieldset {
 }
 
 .result__video-container {
-  width: 100%;
+  /* width: 100%; */
+  width: 711px;
   height: 386px;
   margin-bottom: 16px;
   position: relative;
@@ -170,6 +171,7 @@ fieldset {
 .search-form__textfield {
   color: #fff;
   width: 225px;
+  height: 27px;
 }
 
 .search-form__textfield::placeholder {
